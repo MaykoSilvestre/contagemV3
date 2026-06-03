@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contagem de Equipe</title>
+
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#121212">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <h1>📋 Contagem</h1>
+
+    <button id="settingsBtn" class="icon-btn">
+        ⚙️
+    </button>
+
+</header>
+
+<main class="container">
+
+    <section id="setupScreen">
+
+        <h2>Bem-vindo</h2>
+
+        <p>Nome do setor</p>
+
+        <input
+            type="text"
+            id="sectorNameInput"
+            placeholder="Ex: Linha 2"
+        >
+
+        <button id="saveSectorBtn">
+            Continuar
+        </button>
+
+    </section>
+
+    <section id="mainScreen" class="hidden">
+
+        <h2 id="sectorName"></h2>
+
+        <div class="total-box">
+
+            👥 Total:
+            <span id="totalCount">0</span>
+
+        </div>
+
+        <div id="categoriesContainer">
+
+        </div>
+
+        <div class="actions">
+
+            <button id="previewBtn">
+
+                👁 Ver Mensagem
+
+            </button>
+
+            <button id="shareBtn">
+
+                📤 Compartilhar
+
+            </button>
+
+            <button id="resetBtn">
+
+                🔄 Resetar
+
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- CONFIGURAÇÕES -->
+
+<div
+    id="settingsModal"
+    class="modal hidden"
+>
+
+    <div class="modal-content">
+
+        <h2>⚙️ Configurações</h2>
+
+        <label>
+
+            Nome do setor
+
+            <input
+                type="text"
+                id="editSectorInput"
+            >
+
+        </label>
+
+        <hr>
+
+        <h3>Categorias</h3>
+
+        <div id="categoryList">
+
+        </div>
+
+        <button id="newCategoryBtn">
+
+            ➕ Nova Categoria
+
+        </button>
+
+        <button
+            id="closeSettingsBtn"
+        >
+
+            Fechar
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- CATEGORIA -->
+
+<div
+    id="categoryModal"
+    class="modal hidden"
+>
+
+    <div class="modal-content">
+
+        <h2 id="categoryModalTitle">
+
+            Nova Categoria
+
+        </h2>
+
+        <input
+            type="text"
+            id="categoryNameInput"
+            placeholder="Nome"
+        >
+
+        <input
+            type="number"
+            id="categoryLimitInput"
+            placeholder="Limite"
+        >
+
+        <button id="saveCategoryBtn">
+
+            Salvar
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PREVIEW -->
+
+<div
+    id="previewModal"
+    class="modal hidden"
+>
+
+    <div class="modal-content">
+
+        <h2>Prévia</h2>
+
+        <pre id="previewText"></pre>
+
+        <button
+            id="closePreviewBtn"
+        >
+
+            Fechar
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
